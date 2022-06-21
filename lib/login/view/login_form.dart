@@ -1,5 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:music_world_app/globals.dart';
+import 'package:music_world_app/login/view/login_page.dart';
+import 'package:music_world_app/navigate.dart';
 import 'package:music_world_app/res/colors.dart';
 import 'package:music_world_app/res/string.dart';
 import 'package:music_world_app/res/text_style.dart';
@@ -25,19 +28,110 @@ class LoginForm extends StatelessWidget {
         SizedBox(height: screenHeight * 0.044,),
         Align(
           alignment: Alignment.centerRight,
-          child: Text(
-            forgotPassString,
-            style: bodyMontserratMedium2.copyWith(color: textPrimaryColor),
-          ),
+          child: InkWell(
+            onTap: () {
+              Navigate.pushPage(context, ForgotPassPage());
+            },
+            child: Text(
+              forgotPassString,
+              style: bodyMontserratMedium2.copyWith(color: textPrimaryColor),
+            ),
+          )
         ),
         SizedBox(height: screenHeight * 0.0776,),
         Button(text: signInString, radius: 0),
         SizedBox(height: screenHeight * 0.165,),
         const SignInWithButtons(),
+        SizedBox(height: screenHeight * 0.074,),
+        RichText(
+            text: TextSpan(
+                text: doNotHaveAccountString,
+                style: bodyRoboto2.copyWith(
+                  color: textPrimaryColor,
+                ),
+                children: [
+                  TextSpan(
+                    text: signUpString,
+                    style: bodyRoboto2.copyWith(
+                      color: primaryColor,
+                    ),
+                    recognizer: TapGestureRecognizer()..onTap = () {
+                      Navigate.pushPage(context, const SignUpPage());
+                    },
+                  )
+                ]
+            )
+
+
+        ),
       ],
     );
   }
 
+}
+
+class SignUpForm extends StatelessWidget {
+  const SignUpForm({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(height: screenHeight * 0.1182,),
+        Input(icon: 'assets/icons/name_icon.png', hintText: nameString),
+        SizedBox(height: screenHeight * 0.044,),
+        Input(icon: 'assets/icons/email_icon.png', hintText: emailString),
+        SizedBox(height: screenHeight * 0.044,),
+        Input(
+          icon: 'assets/icons/password_icon.png',
+          hintText: passWordString,
+          suffixIcon: "assets/icons/show_pass_icon.png",
+        ),
+        SizedBox(height: screenHeight * 0.079,),
+        Button(text: signUPString, radius: 0, onPressed: () {
+          Navigate.popPage(context);
+        },),
+        SizedBox(height: screenHeight * 0.074,),
+        RichText(
+            text: TextSpan(
+                text: haveAccountString,
+                style: bodyRoboto2.copyWith(
+                  color: textPrimaryColor,
+                ),
+                children: [
+                  TextSpan(
+                    text: signINString,
+                    style: bodyRoboto2.copyWith(
+                      color: primaryColor,
+                    ),
+                    recognizer: TapGestureRecognizer()..onTap = () {
+                      Navigate.popPage(context);
+                    },
+                  )
+                ]
+            )
+
+
+        )
+      ],
+    );
+  }
+}
+
+class ForgotPassForm extends StatelessWidget {
+  const ForgotPassForm({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Input(icon: 'assets/icons/email_icon.png', hintText: emailString),
+        SizedBox(height: screenHeight * 0.0788,),
+        Button(text: sentString, radius: 0)
+      ],
+    );
+  }
+  
 }
 
 class SignInWithButtons extends StatelessWidget {
@@ -116,25 +210,6 @@ class SignInWithButtons extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: screenHeight * 0.074,),
-        RichText(
-          text: TextSpan(
-            text: doNotHaveAccountString,
-            style: bodyRoboto2.copyWith(
-              color: textPrimaryColor,
-            ),
-            children: [
-              TextSpan(
-                text: signUpString,
-                style: bodyRoboto2.copyWith(
-                  color: primaryColor,
-                )
-              )
-            ]
-          )
-
-
-        )
       ],
     );
   }
@@ -144,11 +219,13 @@ class SignInWithButtons extends StatelessWidget {
 class Button extends StatelessWidget {
   final String text;
   final double radius;
+  final Function? onPressed;
 
   const Button ({
     Key? key,
     required this.text,
     required this.radius,
+    this.onPressed,
   }) : super(key: key);
 
   @override
@@ -160,7 +237,11 @@ class Button extends StatelessWidget {
           backgroundColor: primaryColor,
           textStyle: bodyMedium1,
         ),
-        onPressed: () {},
+        onPressed: () {
+          if (onPressed != null) {
+            onPressed!();
+          }
+        },
         child: Text(text),
     );
   }
