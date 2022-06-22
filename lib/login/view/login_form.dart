@@ -6,6 +6,10 @@ import 'package:music_world_app/navigate.dart';
 import 'package:music_world_app/res/colors.dart';
 import 'package:music_world_app/res/string.dart';
 import 'package:music_world_app/res/text_style.dart';
+import 'package:music_world_app/verify_number/view/enter_phone.dart';
+
+import '../../components/Button.dart';
+import '../../components/input_field.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -30,7 +34,7 @@ class LoginForm extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: InkWell(
             onTap: () {
-              Navigate.pushPage(context, ForgotPassPage());
+              Navigate.pushPage(context, const ForgotPassPage());
             },
             child: Text(
               forgotPassString,
@@ -39,7 +43,9 @@ class LoginForm extends StatelessWidget {
           )
         ),
         SizedBox(height: screenHeight * 0.0776,),
-        Button(text: signInString, radius: 0),
+        Button(text: signInString, radius: 0, onPressed: () {
+          Navigate.pushPage(context, const EnterPhonePage());
+        },),
         SizedBox(height: screenHeight * 0.165,),
         const SignInWithButtons(),
         SizedBox(height: screenHeight * 0.074,),
@@ -213,79 +219,5 @@ class SignInWithButtons extends StatelessWidget {
       ],
     );
   }
-
-}
-
-class Button extends StatelessWidget {
-  final String text;
-  final double radius;
-  final Function? onPressed;
-
-  const Button ({
-    Key? key,
-    required this.text,
-    required this.radius,
-    this.onPressed,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-        style: TextButton.styleFrom(
-          minimumSize: Size.fromHeight(screenHeight * 0.0566),
-          primary: const Color(0xFF20242F),
-          backgroundColor: primaryColor,
-          textStyle: bodyMedium1,
-        ),
-        onPressed: () {
-          if (onPressed != null) {
-            onPressed!();
-          }
-        },
-        child: Text(text),
-    );
-  }
-}
-
-class Input extends StatelessWidget {
-  final String icon;
-  final String hintText;
-  final String? suffixIcon;
-
-  const Input({
-    Key? key,
-    required this.icon,
-    required this.hintText,
-    this.suffixIcon,
-  }) : super(key: key)  ;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: bodyMontserratMedium2.copyWith(color: neutralColor2),
-        prefixIcon: Padding(
-          padding: EdgeInsets.only(right: screenWidth * 0.0644),
-          child: ImageIcon(
-            AssetImage(icon),
-            color: neutralColor2,
-          ),
-        ),
-        suffixIcon: suffixIcon != null
-            ? Padding(
-              padding: EdgeInsets.only(left: screenWidth * 0.02, right: 0),
-              child: ImageIcon(
-                AssetImage(suffixIcon!),
-                color: neutralColor2,
-              ),
-            ) : const SizedBox(width: 0, height: 0),
-        contentPadding: EdgeInsets.only(top: screenHeight * 0.016),
-      ),
-      cursorColor: primaryColor,
-      style: bodyMontserratMedium2.copyWith(color: textPrimaryColor),
-    );
-  }
-
 
 }

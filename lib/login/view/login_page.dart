@@ -111,7 +111,7 @@ class ForgotPassPage extends StatelessWidget {
               children: [
                 Text(
                   forgotPassString,
-                  style: titleBold3.copyWith(
+                  style: titleMedium3.copyWith(
                     color: textPrimaryColor,
                   ),
                 ),
