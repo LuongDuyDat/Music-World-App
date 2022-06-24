@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_world_app/res/colors.dart';
+import 'package:music_world_app/util/colors.dart';
 
 final theme = ThemeData(
   primaryColor: primaryColor,

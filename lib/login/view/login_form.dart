@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:music_world_app/globals.dart';
 import 'package:music_world_app/login/view/login_page.dart';
 import 'package:music_world_app/navigate.dart';
-import 'package:music_world_app/res/colors.dart';
-import 'package:music_world_app/res/string.dart';
-import 'package:music_world_app/res/text_style.dart';
+import 'package:music_world_app/util/colors.dart';
+import 'package:music_world_app/util/string.dart';
+import 'package:music_world_app/util/text_style.dart';
 import 'package:music_world_app/verify_number/view/enter_phone.dart';
 
 import '../../components/Button.dart';

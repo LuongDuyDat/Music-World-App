@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../globals.dart';
-import '../res/colors.dart';
-import '../res/text_style.dart';
+import '../util/colors.dart';
+import '../util/text_style.dart';
 
 class Input extends StatelessWidget {
   final String icon;

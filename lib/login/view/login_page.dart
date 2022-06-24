@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:music_world_app/globals.dart';
 import 'package:music_world_app/login/view/login_form.dart';
 import 'package:music_world_app/navigate.dart';
-import 'package:music_world_app/res/colors.dart';
-import 'package:music_world_app/res/string.dart';
+import 'package:music_world_app/util/colors.dart';
+import 'package:music_world_app/util/string.dart';
 
-import '../../res/text_style.dart';
+import '../../util/text_style.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);

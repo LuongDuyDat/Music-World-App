@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_verification_code/flutter_verification_code.dart';
-import 'package:music_world_app/res/colors.dart';
-import 'package:music_world_app/res/text_style.dart';
+import 'package:music_world_app/util/colors.dart';
+import 'package:music_world_app/util/text_style.dart';
+import 'package:music_world_app/verify_number/view/verify_done.dart';
 
 import '../../components/Button.dart';
 import '../../globals.dart';
 import '../../navigate.dart';
-import '../../res/string.dart';
+import '../../util/string.dart';
 
 class Otp extends StatefulWidget{
   const Otp({Key? key}) : super(key: key);
@@ -62,10 +62,13 @@ class _OtpState extends State<Otp> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: screenWidth * 0.14267,right: screenWidth * 0.14267, top: screenHeight * 0.0813,),
+            padding: EdgeInsets.only(left: screenWidth * 0.14267,right: screenWidth * 0.14267, top: screenHeight * 0.08,),
             child: Button(
               text: continueString,
               radius: 0,
+              onPressed: () {
+                Navigate.pushPage(context, const VerifyDonePage());
+              },
             ),
           ),
           SizedBox(height: screenHeight * 0.043,),
