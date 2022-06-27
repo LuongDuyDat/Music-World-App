@@ -22,3 +22,7 @@ String resentCodeString = lang=='en'?'Resent Code':'Gửi lại mã';
 String verifyDoneString = lang=='en'?'Verify Done!':'Xác nhận hoàn tất!';
 String haveGoodExperienceString = lang=='en'?'Have a good experrience with our app!':'Chúc bạn có những trải nghiệm tốt với ứng dụng của chúng tôi';
 String doneString = lang=='en'?'Done':'Hoàn tất';
+String homeString = lang=='en'?'Home':'Trang chủ';
+String exploreString = lang=='en'?'Explore':'Khám phá';
+String radioString = "Radio";
+String accountString = lang=='en'?'Account':'Tài khoản';

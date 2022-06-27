@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_world_app/HomePage.dart';
 
 import '../../components/Button.dart';
 import '../../globals.dart';
@@ -57,6 +58,9 @@ class VerifyDonePage extends StatelessWidget {
             child: Button(
               text: doneString,
               radius: 0,
+              onPressed: () {
+                Navigate.pushPage(context, const MyHomePage());
+              },
             ),
           ),
         ],
