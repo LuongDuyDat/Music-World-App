@@ -1,4 +1,4 @@
-import '../globals.dart';
+import 'globals.dart';
 
 String signInString = lang=='en'?'SIGN IN':'ĐĂNG NHẬP';
 String signUPString = lang=='en'?'SIGN UP':'ĐĂNG KÝ';

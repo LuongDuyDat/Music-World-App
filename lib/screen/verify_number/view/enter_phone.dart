@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:music_world_app/components/input_field.dart';
-import 'package:music_world_app/navigate.dart';
+import 'package:music_world_app/util/navigate.dart';
 import 'package:music_world_app/util/colors.dart';
-import 'package:music_world_app/verify_number/view/OTP_verify.dart';
 
-import '../../components/Button.dart';
-import '../../globals.dart';
-import '../../util/string.dart';
-import '../../util/text_style.dart';
+import '../../../components/Button.dart';
+import '../../../util/globals.dart';
+import '../../../util/string.dart';
+import '../../../util/text_style.dart';
+import 'OTP_verify.dart';
+
 
 class EnterPhonePage extends StatelessWidget {
   const EnterPhonePage({Key? key}) : super(key: key);

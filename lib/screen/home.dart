@@ -3,7 +3,8 @@ import 'package:music_world_app/util/colors.dart';
 import 'package:music_world_app/util/string.dart';
 import 'package:music_world_app/util/text_style.dart';
 
-import 'globals.dart';
+import '../util/globals.dart';
+import 'home/view/home_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -25,10 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   static const screen = [
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+    Home(),
     Text(
       'Index 1: Business',
       style: optionStyle,

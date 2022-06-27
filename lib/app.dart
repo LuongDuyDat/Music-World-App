@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:music_world_app/globals.dart';
-import 'package:music_world_app/login/view/login_page.dart';
-import 'package:music_world_app/theme.dart';
+import 'package:music_world_app/screen/login/view/login_page.dart';
+import 'package:music_world_app/util/theme.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);

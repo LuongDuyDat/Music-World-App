@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:music_world_app/HomePage.dart';
+import 'package:music_world_app/screen/home.dart';
 
-import '../../components/Button.dart';
-import '../../globals.dart';
-import '../../navigate.dart';
-import '../../util/colors.dart';
-import '../../util/string.dart';
-import '../../util/text_style.dart';
+import '../../../components/Button.dart';
+import '../../../util/colors.dart';
+import '../../../util/globals.dart';
+import '../../../util/navigate.dart';
+import '../../../util/string.dart';
+import '../../../util/text_style.dart';
 
 class VerifyDonePage extends StatelessWidget {
   const VerifyDonePage({Key? key}) : super(key: key);

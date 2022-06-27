@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:music_world_app/screen/verify_number/view/verify_done.dart';
 import 'package:music_world_app/util/colors.dart';
 import 'package:music_world_app/util/text_style.dart';
-import 'package:music_world_app/verify_number/view/verify_done.dart';
 
-import '../../components/Button.dart';
-import '../../globals.dart';
-import '../../navigate.dart';
-import '../../util/string.dart';
+import '../../../components/Button.dart';
+import '../../../util/globals.dart';
+import '../../../util/navigate.dart';
+import '../../../util/string.dart';
 
 class Otp extends StatefulWidget{
   const Otp({Key? key}) : super(key: key);
