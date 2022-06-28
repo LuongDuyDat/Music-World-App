@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_world_app/screen/explore/view/explore_page.dart';
 import 'package:music_world_app/util/colors.dart';
 import 'package:music_world_app/util/string.dart';
 import 'package:music_world_app/util/text_style.dart';
@@ -27,10 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static const screen = [
     Home(),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
+    ExplorePage(),
     Text(
       'Index 2: School',
       style: optionStyle,

@@ -1,5 +1,4 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:music_world_app/components/playing_bar.dart';
 import 'package:music_world_app/components/song_tile.dart';
@@ -88,7 +87,6 @@ class Home extends StatelessWidget {
                 artist: "Avinci John",
                 number: 4,
               ),
-
             ],
           ),
         ),

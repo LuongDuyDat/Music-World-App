@@ -29,3 +29,5 @@ String accountString = lang=='en'?'Account':'Tài khoản';
 String newAlbumString = lang=='en'?'New Albums':'Album mới';
 String viewAllString = lang=='en'?'View all':'Xem tất cả';
 String recentMusicString = lang=='en'?'Recently Music':'Gần đây';
+String chartString = lang=='en'?'Chart':'Bảng xếp hạng';
+String topicString = lang=='en'?'Topic':'Chủ đề';
