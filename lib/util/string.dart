@@ -26,3 +26,6 @@ String homeString = lang=='en'?'Home':'Trang chủ';
 String exploreString = lang=='en'?'Explore':'Khám phá';
 String radioString = "Radio";
 String accountString = lang=='en'?'Account':'Tài khoản';
+String newAlbumString = lang=='en'?'New Albums':'Album mới';
+String viewAllString = lang=='en'?'View all':'Xem tất cả';
+String recentMusicString = lang=='en'?'Recently Music':'Gần đây';
