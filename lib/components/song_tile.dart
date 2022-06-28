@@ -30,7 +30,7 @@ class SongListTile extends StatelessWidget {
               padding: EdgeInsets.only(top: screenHeight * 0.00446),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(3.0),
-                child: Image.asset(leadingAsset,),
+                child: Image.asset(leadingAsset, width: 32, height: 32, fit: BoxFit.cover,),
               ),
             ),
             title: Text(

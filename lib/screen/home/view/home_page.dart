@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:music_world_app/components/playing_bar.dart';
 import 'package:music_world_app/components/song_tile.dart';
 import 'package:music_world_app/util/colors.dart';
 import 'package:music_world_app/util/globals.dart';
@@ -13,6 +14,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double recentMusicHeight = isPlayingSong ? 0.3125 : 0.3906;
     return Column(
       children: [
         Padding(
@@ -55,39 +57,66 @@ class Home extends StatelessWidget {
             ),
           ),
         ),
-        Flexible(
-          child: Padding(
-            padding: EdgeInsets.only(left: screenWidth * 0.064),
-            child: ListView(
-              children: const [
-                SongListTile(
-                  leadingAsset: "assets/images/song1.png",
-                  songName: "Nice For What",
-                  artist: "Avinci John",
-                  number: 1,
-                ),
-                SongListTile(
-                  leadingAsset: "assets/images/song2.png",
-                  songName: "Where can I get some ?",
-                  artist: "Arian Grande",
-                  number: 2,
-                ),
-                SongListTile(
-                  leadingAsset: "assets/images/song3.png",
-                  songName: "Why do we use it ?",
-                  artist: "Alan Walker",
-                  number: 3,
-                ),
-                SongListTile(
-                  leadingAsset: "assets/images/song4.png",
-                  songName: "Fall Out Boys",
-                  artist: "Avinci John",
-                  number: 4,
-                ),
-              ],
-            ),
-          )
+        Container(
+          height: recentMusicHeight * screenHeight,
+          padding: EdgeInsets.only(left: screenWidth * 0.064),
+          child: ListView(
+            //shrinkWrap: true,
+            //physics: const NeverScrollableScrollPhysics(),
+            children: const [
+              SongListTile(
+                leadingAsset: "assets/images/song1.png",
+                songName: "Nice For What",
+                artist: "Avinci John",
+                number: 1,
+              ),
+              SongListTile(
+                leadingAsset: "assets/images/song2.png",
+                songName: "Where can I get some ?",
+                artist: "Arian Grande",
+                number: 2,
+              ),
+              SongListTile(
+                leadingAsset: "assets/images/song3.png",
+                songName: "Why do we use it ?",
+                artist: "Alan Walker",
+                number: 3,
+              ),
+              SongListTile(
+                leadingAsset: "assets/images/song4.png",
+                songName: "Fall Out Boys",
+                artist: "Avinci John",
+                number: 4,
+              ),
+
+            ],
+          ),
         ),
+        isPlayingSong
+            ? Container(
+              height: 0.079 * screenHeight,
+              decoration: BoxDecoration(
+                color: primaryColor,
+              ),
+              child: Center(
+                child: ListTile(
+                  contentPadding: EdgeInsets.symmetric(horizontal: screenWidth * 0.064),
+                  leading: const CircleAvatar(
+                    backgroundImage: AssetImage("assets/images/song1.png"),
+                  ),
+                  title: Text(
+                    "Nice For What",
+                    style: bodyRoboto2.copyWith(color: neutralColor3),
+                  ),
+                  trailing: Container(
+                    alignment: Alignment.centerRight,
+                    width: screenWidth * 0.3413,
+                    child: const PlayingBar(type: 1),
+                  ),
+                ),
+              )
+            )
+            : const SizedBox(width: 0, height: 0,)
       ],
     );
   }
