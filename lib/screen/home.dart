@@ -73,6 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
       accountString,
     ];
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: backgroundColor,
         automaticallyImplyLeading: false,

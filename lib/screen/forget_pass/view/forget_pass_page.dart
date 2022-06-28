@@ -13,6 +13,7 @@ class ForgotPassPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: backgroundColor,
           iconTheme: IconThemeData(

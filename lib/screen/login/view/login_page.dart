@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:music_world_app/util/globals.dart';
-import 'package:music_world_app/util/navigate.dart';
 import 'package:music_world_app/util/colors.dart';
 import 'package:music_world_app/util/string.dart';
 
@@ -26,6 +25,7 @@ class LoginPage extends StatelessWidget {
           ),
         ),
         Scaffold(
+          resizeToAvoidBottomInset: false,
           backgroundColor: const Color.fromRGBO(0, 0, 0, 0),
           body: Padding(
               padding: EdgeInsets.only(left: screenWidth * 0.1067, right: screenWidth * 0.1067, top: screenHeight * 0.127),
