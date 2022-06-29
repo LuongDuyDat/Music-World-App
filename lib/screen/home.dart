@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:music_world_app/screen/explore/view/explore_page.dart';
+import 'package:music_world_app/screen/search/view/search_page.dart';
 import 'package:music_world_app/util/colors.dart';
+import 'package:music_world_app/util/navigate.dart';
 import 'package:music_world_app/util/string.dart';
 import 'package:music_world_app/util/text_style.dart';
 
@@ -92,8 +94,16 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           Padding(
             padding: EdgeInsets.only(right: screenWidth * 0.064),
-            child: index == 0 || index == 1 ? const Icon(Icons.search)
-                : index == 3 ? const Icon(Icons.settings) : const SizedBox(width: 0, height: 0,),
+            child: index == 0 || index == 1
+                ? IconButton(
+                  onPressed: () {
+                    Navigate.pushPage(context, const SearchPage());
+                  },
+                  icon: const Icon(Icons.search),
+                )
+                : index == 3
+                ? const Icon(Icons.settings)
+                : const SizedBox(width: 0, height: 0,),
           ),
         ],
       ),

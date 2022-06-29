@@ -31,3 +31,7 @@ String viewAllString = lang=='en'?'View all':'Xem tất cả';
 String recentMusicString = lang=='en'?'Recently Music':'Gần đây';
 String chartString = lang=='en'?'Chart':'Bảng xếp hạng';
 String topicString = lang=='en'?'Topic':'Chủ đề';
+String searchString = lang=='en'?'Search':'Tìm kiếm';
+String cancelString = lang=='en'?'Cancel':'Huỷ bỏ';
+String historyString = lang=='en'?'History':'Lịch sử';
+String topSearchString = lang=='en'?'Top Searching':'Tìm kiếm nhiều nhất';
