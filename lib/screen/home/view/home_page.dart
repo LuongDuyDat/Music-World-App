@@ -43,7 +43,7 @@ class Home extends StatelessWidget {
               initialPage: 1,
               enableInfiniteScroll: true,
               enlargeCenterPage: true,
-              viewportFraction: 0.5,
+              viewportFraction: 0.6,
             )
         ),
         Align(
