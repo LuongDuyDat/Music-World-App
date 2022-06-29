@@ -8,6 +8,7 @@ class Button extends StatelessWidget {
   final double radius;
   final Function? onPressed;
   final double minimumSize;
+  final TextStyle? type;
 
   const Button ({
     Key? key,
@@ -15,6 +16,7 @@ class Button extends StatelessWidget {
     required this.radius,
     this.onPressed,
     required this.minimumSize,
+    this.type,
   }) : super(key: key);
 
   @override
@@ -24,7 +26,7 @@ class Button extends StatelessWidget {
         minimumSize: Size.fromHeight(minimumSize),
         primary: const Color(0xFF20242F),
         backgroundColor: primaryColor,
-        textStyle: bodyMedium1,
+        textStyle: type ?? bodyMedium1,
       ),
       onPressed: () {
         if (onPressed != null) {
