@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
 
 import '../util/colors.dart';
-import '../util/globals.dart';
 import '../util/text_style.dart';
 
 class Button extends StatelessWidget {
   final String text;
   final double radius;
   final Function? onPressed;
+  final double minimumSize;
 
   const Button ({
     Key? key,
     required this.text,
     required this.radius,
     this.onPressed,
+    required this.minimumSize,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-        minimumSize: Size.fromHeight(screenHeight * 0.0566),
+        minimumSize: Size.fromHeight(minimumSize),
         primary: const Color(0xFF20242F),
         backgroundColor: primaryColor,
         textStyle: bodyMedium1,

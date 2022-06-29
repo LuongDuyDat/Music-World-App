@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 
-import '../../../components/Button.dart';
+import '../../../components/button.dart';
 import '../../../components/input_field.dart';
 import '../../../util/colors.dart';
 import '../../../util/globals.dart';
@@ -28,8 +28,9 @@ class SignUpForm extends StatelessWidget {
         ),
         SizedBox(height: screenHeight * 0.079,),
         Button(text: signUPString, radius: 0, onPressed: () {
-          Navigate.popPage(context);
-        },),
+            Navigate.popPage(context);
+          }, minimumSize: screenHeight * 0.0566,
+        ),
         SizedBox(height: screenHeight * 0.074,),
         RichText(
             text: TextSpan(

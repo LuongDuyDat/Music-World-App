@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_world_app/screen/home.dart';
 
-import '../../../components/Button.dart';
+import '../../../components/button.dart';
 import '../../../util/colors.dart';
 import '../../../util/globals.dart';
 import '../../../util/navigate.dart';
@@ -62,6 +62,7 @@ class VerifyDonePage extends StatelessWidget {
               onPressed: () {
                 Navigate.pushPage(context, const MyHomePage());
               },
+              minimumSize: screenHeight * 0.0566,
             ),
           ),
         ],

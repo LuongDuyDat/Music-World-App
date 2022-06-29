@@ -6,7 +6,7 @@ import 'package:music_world_app/util/colors.dart';
 import 'package:music_world_app/util/string.dart';
 import 'package:music_world_app/util/text_style.dart';
 
-import '../../../components/Button.dart';
+import '../../../components/button.dart';
 import '../../../components/input_field.dart';
 import '../../forget_pass/view/forget_pass_page.dart';
 import '../../sign_up/view/sign_up_page.dart';
@@ -47,7 +47,7 @@ class LoginForm extends StatelessWidget {
         SizedBox(height: screenHeight * 0.0776,),
         Button(text: signInString, radius: 0, onPressed: () {
           Navigate.pushPage(context, const EnterPhonePage());
-        },),
+        }, minimumSize: screenHeight * 0.0566,),
         SizedBox(height: screenHeight * 0.165,),
         const SignInWithButtons(),
         SizedBox(height: screenHeight * 0.074,),

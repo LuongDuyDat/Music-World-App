@@ -5,7 +5,7 @@ import 'package:music_world_app/screen/verify_number/view/verify_done.dart';
 import 'package:music_world_app/util/colors.dart';
 import 'package:music_world_app/util/text_style.dart';
 
-import '../../../components/Button.dart';
+import '../../../components/button.dart';
 import '../../../util/globals.dart';
 import '../../../util/navigate.dart';
 import '../../../util/string.dart';
@@ -69,7 +69,7 @@ class _OtpState extends State<Otp> {
               radius: 0,
               onPressed: () {
                 Navigate.pushPage(context, const VerifyDonePage());
-              },
+              }, minimumSize: screenHeight * 0.0566,
             ),
           ),
           SizedBox(height: screenHeight * 0.043,),

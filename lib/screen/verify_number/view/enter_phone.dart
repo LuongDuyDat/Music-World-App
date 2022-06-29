@@ -3,7 +3,7 @@ import 'package:music_world_app/components/input_field.dart';
 import 'package:music_world_app/util/navigate.dart';
 import 'package:music_world_app/util/colors.dart';
 
-import '../../../components/Button.dart';
+import '../../../components/button.dart';
 import '../../../util/globals.dart';
 import '../../../util/string.dart';
 import '../../../util/text_style.dart';
@@ -60,6 +60,7 @@ class EnterPhonePage extends StatelessWidget {
                   onPressed: () {
                     Navigate.pushPage(context, const Otp());
                   },
+                  minimumSize: screenHeight * 0.0566,
                 )
               ],
             ),
