@@ -7,13 +7,15 @@ class SongListTile extends StatelessWidget {
   final int? number;
   final String leadingAsset;
   final String songName;
-  final String artist;
+  final String? artist;
+  final double large;
   const SongListTile({
     Key? key,
     this.number,
     required this.leadingAsset,
     required this.songName,
-    required this.artist
+    this.artist,
+    this.large = 32,
   }) : super(key: key);
 
   @override
@@ -30,17 +32,17 @@ class SongListTile extends StatelessWidget {
               padding: EdgeInsets.only(top: screenHeight * 0.00446),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(3.0),
-                child: Image.asset(leadingAsset, width: 32, height: 32, fit: BoxFit.cover,),
+                child: Image.asset(leadingAsset, width: large, height: large, fit: BoxFit.cover,),
               ),
             ),
             title: Text(
               songName,
               style: bodyRoboto2.copyWith(color: textPrimaryColor),
             ),
-            subtitle: Text(
-              artist,
+            subtitle: artist != null ? Text(
+              artist!,
               style: bodyRegular3.copyWith(color: const Color(0xFF817A7A)),
-            ),
+            ) : null,
             trailing: IconButton(
               icon: const Icon(Icons.more_horiz),
               color: textPrimaryColor,
