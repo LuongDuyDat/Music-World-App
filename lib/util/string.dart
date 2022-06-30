@@ -35,3 +35,7 @@ String searchString = lang=='en'?'Search':'Tìm kiếm';
 String cancelString = lang=='en'?'Cancel':'Huỷ bỏ';
 String historyString = lang=='en'?'History':'Lịch sử';
 String topSearchString = lang=='en'?'Top Searching':'Tìm kiếm nhiều nhất';
+String allString = lang=='en'?'All':'Tất cả';
+String songString = lang=='en'?'Song':'Bài hát';
+String artistString = lang=='en'?'Artist':'Nghệ sĩ';
+String albumString = 'Album';
