@@ -2,8 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:music_world_app/components/playing_bar.dart';
 import 'package:music_world_app/components/song_tile.dart';
+import 'package:music_world_app/screen/song/view/song_page.dart';
 import 'package:music_world_app/util/colors.dart';
 import 'package:music_world_app/util/globals.dart';
+import 'package:music_world_app/util/navigate.dart';
 import 'package:music_world_app/util/text_style.dart';
 
 import '../../../util/string.dart';
@@ -62,26 +64,31 @@ class Home extends StatelessWidget {
           child: ListView(
             //shrinkWrap: true,
             //physics: const NeverScrollableScrollPhysics(),
-            children: const [
-              SongListTile(
-                leadingAsset: "assets/images/song1.png",
-                songName: "Nice For What",
-                artist: "Avinci John",
-                number: 1,
+            children: [
+              InkWell(
+                child: const SongListTile(
+                  leadingAsset: "assets/images/song1.png",
+                  songName: "Nice For What",
+                  artist: "Avinci John",
+                  number: 1,
+                ),
+                onTap: () {
+                  Navigate.pushPage(context, SongPage());
+                },
               ),
-              SongListTile(
+              const SongListTile(
                 leadingAsset: "assets/images/song2.png",
                 songName: "Where can I get some ?",
                 artist: "Arian Grande",
                 number: 2,
               ),
-              SongListTile(
+              const SongListTile(
                 leadingAsset: "assets/images/song3.png",
                 songName: "Why do we use it ?",
                 artist: "Alan Walker",
                 number: 3,
               ),
-              SongListTile(
+              const SongListTile(
                 leadingAsset: "assets/images/song4.png",
                 songName: "Fall Out Boys",
                 artist: "Avinci John",

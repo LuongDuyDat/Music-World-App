@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_world_app/screen/explore/view/explore_page.dart';
 import 'package:music_world_app/screen/search/view/search_page.dart';
+import 'package:music_world_app/screen/song/view/song_page.dart';
 import 'package:music_world_app/util/colors.dart';
 import 'package:music_world_app/util/navigate.dart';
 import 'package:music_world_app/util/string.dart';
@@ -36,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
       style: optionStyle,
     ),
     Text(
-      'Index 3: Settings',
+      'Index 3: Account',
       style: optionStyle,
     ),
   ];
