@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_world_app/screen/song/view/song_view1.dart';
 import 'package:music_world_app/screen/song/view/song_view2.dart';
+import 'package:music_world_app/screen/song/view/song_view3.dart';
 import 'package:music_world_app/util/colors.dart';
 import 'package:music_world_app/util/globals.dart';
 import 'package:music_world_app/util/text_style.dart';
@@ -19,10 +20,7 @@ class _SongPageState extends State<SongPage> {
   static List<Widget> screen = [
     const SongView1(),
     const SongView2(),
-    Text(
-      'Index 3: School',
-      style: title1.copyWith(color: textPrimaryColor),
-    ),
+    const SongView3(),
   ];
 
   @override
