@@ -39,3 +39,5 @@ String allString = lang=='en'?'All':'Tất cả';
 String songString = lang=='en'?'Song':'Bài hát';
 String artistString = lang=='en'?'Artist':'Nghệ sĩ';
 String albumString = 'Album';
+String showMoreString = "Show more";
+String suggestionsString = "Suggestions";
