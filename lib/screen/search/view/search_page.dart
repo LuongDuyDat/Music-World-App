@@ -20,6 +20,7 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   bool isEmpty = true;
+  final TextEditingController _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -41,6 +42,7 @@ class _SearchPageState extends State<SearchPage> {
                   ),
                   child: Center(
                     child: TextField(
+                      controller: _controller,
                       style: bodyRegular1.copyWith(color: neutralColor2),
                       decoration: InputDecoration(
                           prefixIcon: const Icon(Icons.search, color: Colors.white, size: 20,),
@@ -50,7 +52,15 @@ class _SearchPageState extends State<SearchPage> {
                           errorBorder: InputBorder.none,
                           disabledBorder: InputBorder.none,
                           hintStyle: bodyRegular1.copyWith(color: neutralColor2),
-                          suffixIcon: Icon(Icons.cancel_outlined, size: 12, color: neutralColor2,)
+                          suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                isEmpty = true;
+                                _controller.text = "";
+                              });
+                            },
+                            icon: Icon(Icons.cancel_outlined, size: 12, color: neutralColor2),
+                          ),
                       ),
                       autofocus: false,
                       cursorColor: primaryColor,
@@ -126,24 +136,40 @@ class _SearchPageState extends State<SearchPage> {
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
                         children: [
-                          Container(
-                            width: screenWidth * 0.2267,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: primaryColor),
+                          InkWell(
+                            child: Container(
+                              width: screenWidth * 0.2267,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: primaryColor),
+                              ),
+                              child: const Button2(
+                                text: "Fall out boy",
+                              ),
                             ),
-                            child: const Button2(
-                              text: "Fall out boy",
-                            ),
+                            onTap: () {
+                              setState(() {
+                                isEmpty = false;
+                                _controller.text = "Fall out boy";
+                              });
+                            },
                           ),
                           SizedBox(width: screenWidth * 0.032,),
-                          Container(
-                            width: screenWidth * 0.2267,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: primaryColor),
+                          InkWell(
+                            child: Container(
+                              width: screenWidth * 0.2267,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: primaryColor),
+                              ),
+                              child: const Button2(
+                                text: "Good girl",
+                              ),
                             ),
-                            child: const Button2(
-                              text: "Good girl",
-                            ),
+                            onTap: () {
+                              setState(() {
+                                isEmpty = false;
+                                _controller.text = "Good girl";
+                              });
+                            },
                           ),
                         ],
                       ),
@@ -162,24 +188,40 @@ class _SearchPageState extends State<SearchPage> {
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
                         children: [
-                          SizedBox(
-                            width: screenWidth * 0.2267,
-                            child: Button(
-                              text: "Girl",
-                              radius: 0,
-                              minimumSize: screenHeight * 0.0345,
-                              type: bodyRegular3,
+                          InkWell(
+                            child: SizedBox(
+                              width: screenWidth * 0.2267,
+                              child: Button(
+                                text: "Girl",
+                                radius: 0,
+                                minimumSize: screenHeight * 0.0345,
+                                type: bodyRegular3,
+                              ),
                             ),
+                            onTap: () {
+                              setState(() {
+                                isEmpty = false;
+                                _controller.text = "Girl";
+                              });
+                            },
                           ),
                           SizedBox(width: screenWidth * 0.032,),
-                          SizedBox(
-                            width: screenWidth * 0.2267,
-                            child: Button(
-                              text: "Imagine",
-                              radius: 0,
-                              minimumSize: screenHeight * 0.0345,
-                              type: bodyRegular3,
+                          InkWell(
+                            child: SizedBox(
+                              width: screenWidth * 0.2267,
+                              child: Button(
+                                text: "Imagine",
+                                radius: 0,
+                                minimumSize: screenHeight * 0.0345,
+                                type: bodyRegular3,
+                              ),
                             ),
+                            onTap: () {
+                              setState(() {
+                                isEmpty = false;
+                                _controller.text = "Imagine";
+                              });
+                            },
                           ),
                         ],
                       ),

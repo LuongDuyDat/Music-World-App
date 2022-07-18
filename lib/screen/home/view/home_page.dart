@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:music_world_app/components/playing_bar.dart';
 import 'package:music_world_app/components/song_tile.dart';
+import 'package:music_world_app/screen/explore/view/topic.dart';
 import 'package:music_world_app/screen/song/view/song_page.dart';
 import 'package:music_world_app/util/colors.dart';
 import 'package:music_world_app/util/globals.dart';
@@ -35,10 +36,25 @@ class Home extends StatelessWidget {
           ),
         ),
         CarouselSlider(
-            items: const [
-              ImageSlideBar(asset: "assets/images/Album1.png", title: "Do it", singer: "Milian Luu",),
-              ImageSlideBar(asset: "assets/images/Album2.png", title: "Pray for you", singer: "The Weekend",),
-              ImageSlideBar(asset: "assets/images/Album1.png", title: "Do it", singer: "Milian Luu",),
+            items: [
+              InkWell(
+                child: const ImageSlideBar(asset: "assets/images/Album1.png", title: "Do it", singer: "Milian Luu",),
+                onTap: () {
+                  Navigate.pushPage(context, const Topic(type: "Album",));
+                },
+              ),
+              InkWell(
+                child: const ImageSlideBar(asset: "assets/images/Album2.png", title: "Pray for you", singer: "The Weekend",),
+                onTap: () {
+                  Navigate.pushPage(context, const Topic(type: "Album",));
+                },
+              ),
+              InkWell(
+                child: const ImageSlideBar(asset: "assets/images/Album3.png", title: "Do it", singer: "Milian Luu",),
+                onTap: () {
+                  Navigate.pushPage(context, const Topic(type: "Album",));
+                },
+              ),
             ],
             options: CarouselOptions(
               height: 0.2 * screenHeight,
@@ -64,31 +80,26 @@ class Home extends StatelessWidget {
           child: ListView(
             //shrinkWrap: true,
             //physics: const NeverScrollableScrollPhysics(),
-            children: [
-              InkWell(
-                child: const SongListTile(
-                  leadingAsset: "assets/images/song1.png",
-                  songName: "Nice For What",
-                  artist: "Avinci John",
-                  number: 1,
-                ),
-                onTap: () {
-                  Navigate.pushPage(context, SongPage());
-                },
+            children: const [
+              SongListTile(
+                leadingAsset: "assets/images/song1.png",
+                songName: "Nice For What",
+                artist: "Avinci John",
+                number: 1,
               ),
-              const SongListTile(
+              SongListTile(
                 leadingAsset: "assets/images/song2.png",
                 songName: "Where can I get some ?",
                 artist: "Arian Grande",
                 number: 2,
               ),
-              const SongListTile(
+              SongListTile(
                 leadingAsset: "assets/images/song3.png",
                 songName: "Why do we use it ?",
                 artist: "Alan Walker",
                 number: 3,
               ),
-              const SongListTile(
+              SongListTile(
                 leadingAsset: "assets/images/song4.png",
                 songName: "Fall Out Boys",
                 artist: "Avinci John",
@@ -98,28 +109,33 @@ class Home extends StatelessWidget {
           ),
         ),
         isPlayingSong
-            ? Container(
-              height: 0.079 * screenHeight,
-              decoration: BoxDecoration(
-                color: primaryColor,
-              ),
-              child: Center(
-                child: ListTile(
-                  contentPadding: EdgeInsets.symmetric(horizontal: screenWidth * 0.064),
-                  leading: const CircleAvatar(
-                    backgroundImage: AssetImage("assets/images/song1.png"),
-                  ),
-                  title: Text(
-                    "Nice For What",
-                    style: bodyRoboto2.copyWith(color: neutralColor3),
-                  ),
-                  trailing: Container(
-                    alignment: Alignment.centerRight,
-                    width: screenWidth * 0.3413,
-                    child: const PlayingBar(type: 1),
-                  ),
+            ? InkWell(
+                child: Container(
+                    height: 0.079 * screenHeight,
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                    ),
+                    child: Center(
+                      child: ListTile(
+                        contentPadding: EdgeInsets.symmetric(horizontal: screenWidth * 0.064),
+                        leading: const CircleAvatar(
+                          backgroundImage: AssetImage("assets/images/song1.png"),
+                        ),
+                        title: Text(
+                          "Nice For What",
+                          style: bodyRoboto2.copyWith(color: neutralColor3),
+                        ),
+                        trailing: Container(
+                          alignment: Alignment.centerRight,
+                          width: screenWidth * 0.3413,
+                          child: const PlayingBar(type: 1),
+                        ),
+                      ),
+                    )
                 ),
-              )
+              onTap: () {
+                  Navigate.pushPage(context, const SongPage());
+              },
             )
             : const SizedBox(width: 0, height: 0,)
       ],

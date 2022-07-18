@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_world_app/components/play_bar.dart';
+import 'package:music_world_app/screen/singer/view/singer_info.dart';
 import 'package:music_world_app/util/colors.dart';
 import 'package:music_world_app/util/globals.dart';
 import 'package:music_world_app/util/navigate.dart';
@@ -52,9 +53,16 @@ class Topic extends StatelessWidget {
                     style: title2.copyWith(color: textPrimaryColor),
                   ),
                   const SizedBox(height: 4,),
-                  Text(
-                    type == "Playlist" ? playlistString : "One Republic",
-                    style: subHeadline1.copyWith(color: textPrimaryColor),
+                  GestureDetector(
+                      onTap: () {
+                        if (type != "Playlist") {
+                          Navigate.pushPage(context, const SingerInfo());
+                        }
+                      },
+                      child: Text(
+                        type == "Playlist" ? playlistString : "One Republic",
+                        style: subHeadline1.copyWith(color: textPrimaryColor),
+                      ),
                   ),
                   SizedBox(height: 0.032 * screenHeight,),
                   Text(

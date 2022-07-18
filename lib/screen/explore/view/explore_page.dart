@@ -107,20 +107,30 @@ class ExplorePage extends StatelessWidget {
                         height: 0.075 * screenHeight,
                       ),
                       onTap: () {
-                        Navigate.pushPage(context, const Topic());
+                        Navigate.pushPage(context, const Topic(type: "Playlist",));
                       },
                     ),
-                    ImageType(
-                      asset: "assets/images/pop.png",
-                      type: "POP",
-                      width: 0.256 * screenWidth,
-                      height: 0.075 * screenHeight,
+                    InkWell(
+                      child: ImageType(
+                        asset: "assets/images/pop.png",
+                        type: "POP",
+                        width: 0.256 * screenWidth,
+                        height: 0.075 * screenHeight,
+                      ),
+                      onTap: () {
+                        Navigate.pushPage(context, const Topic(type: "Playlist",));
+                      },
                     ),
-                    ImageType(
-                      asset: "assets/images/jazz.png",
-                      type: "Jazz",
-                      width: 0.256 * screenWidth,
-                      height: 0.075 * screenHeight,
+                    InkWell(
+                      child: ImageType(
+                        asset: "assets/images/jazz.png",
+                        type: "Jazz",
+                        width: 0.256 * screenWidth,
+                        height: 0.075 * screenHeight,
+                      ),
+                      onTap: () {
+                        Navigate.pushPage(context, const Topic(type: "Playlist",));
+                      },
                     ),
                   ],
                 ),
@@ -128,23 +138,38 @@ class ExplorePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ImageType(
-                      asset: "assets/images/danc.png",
-                      type: "Danc",
-                      width: 0.256 * screenWidth,
-                      height: 0.075 * screenHeight,
+                    InkWell(
+                      child: ImageType(
+                        asset: "assets/images/danc.png",
+                        type: "Danc",
+                        width: 0.256 * screenWidth,
+                        height: 0.075 * screenHeight,
+                      ),
+                      onTap: () {
+                        Navigate.pushPage(context, const Topic(type: "Playlist",));
+                      },
                     ),
-                    ImageType(
-                      asset: "assets/images/ballad.png",
-                      type: "Ballad",
-                      width: 0.256 * screenWidth,
-                      height: 0.075 * screenHeight,
+                    InkWell(
+                      child: ImageType(
+                        asset: "assets/images/ballad.png",
+                        type: "Ballad",
+                        width: 0.256 * screenWidth,
+                        height: 0.075 * screenHeight,
+                      ),
+                      onTap: () {
+                        Navigate.pushPage(context, const Topic(type: "Playlist",));
+                      },
                     ),
-                    ImageType(
-                      asset: "assets/images/R_B.png",
-                      type: "R&B",
-                      width: 0.256 * screenWidth,
-                      height: 0.075 * screenHeight,
+                    InkWell(
+                      child: ImageType(
+                        asset: "assets/images/R_B.png",
+                        type: "R&B",
+                        width: 0.256 * screenWidth,
+                        height: 0.075 * screenHeight,
+                      ),
+                      onTap: () {
+                        Navigate.pushPage(context, const Topic(type: "Playlist",));
+                      },
                     ),
                   ],
                 ),
