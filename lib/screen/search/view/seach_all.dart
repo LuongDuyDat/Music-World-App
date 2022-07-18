@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:music_world_app/components/song_tile.dart';
+import 'package:music_world_app/screen/singer/view/singer_info.dart';
 import 'package:music_world_app/util/colors.dart';
 import 'package:music_world_app/util/globals.dart';
+import 'package:music_world_app/util/navigate.dart';
 import 'package:music_world_app/util/string.dart';
 import 'package:music_world_app/util/text_style.dart';
 
@@ -27,7 +29,12 @@ class SearchAll extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 children: [
-                  const SongListTile(leadingAsset: "assets/images/song2.png", songName: "Johnny Scott", large: 40,),
+                  InkWell(
+                    child: const SongListTile(leadingAsset: "assets/images/song2.png", songName: "Johnny Scott", large: 40,),
+                    onTap: () {
+                      Navigate.pushPage(context, const SingerInfo());
+                    },
+                  ),
                   Divider(indent: screenWidth * 0.175, color: neutralColor2, height: 15,),
                   const SongListTile(leadingAsset: "assets/images/ballad.png", songName: "Justin Scarrent", large: 40,),
                   Divider(indent: screenWidth * 0.175, color: neutralColor2, height: 15,),

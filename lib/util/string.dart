@@ -43,3 +43,6 @@ String showMoreString = "Show more";
 String suggestionsString = "Suggestions";
 String lyricString = "Lyrics";
 String playlistString = "Playlist";
+String followString = "Follow";
+String followerString = "Follower";
+String followingString = "Following";

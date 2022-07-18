@@ -23,8 +23,8 @@ class SongListTile extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        number != null ? number! < 10 ? Text('0' + number.toString(), style: bodyRoboto2.copyWith(color: textPrimaryColor),)
-            : Text(number.toString(), style: bodyRoboto2.copyWith(color: textPrimaryColor),)
+        number != null ? (number! < 10 ? Text('0' + number.toString(), style: bodyRoboto2.copyWith(color: textPrimaryColor),)
+            : Text(number.toString(), style: bodyRoboto2.copyWith(color: textPrimaryColor),))
             : const SizedBox(width: 0, height: 0,),
         Flexible(
           child:  ListTile(
