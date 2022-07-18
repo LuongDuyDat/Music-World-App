@@ -10,16 +10,19 @@ import '../../../components/song_tile.dart';
 import '../../song/view/song_page.dart';
 
 class Topic extends StatelessWidget {
-  const Topic({Key? key}) : super(key: key);
+  final String type;
+  const Topic({Key? key, required this.type}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/topic_background.png"),
+                image: AssetImage(
+                  type == "Playlist" ?
+                  "assets/images/topic_background.png" : "assets/images/album_background.png",),
                 fit: BoxFit.cover,
               )
           ),
@@ -45,12 +48,12 @@ class Topic extends StatelessWidget {
                   const PlayingBar(type: 1),
                   SizedBox(height: screenHeight * 0.1638,),
                   Text(
-                    "Hip Hop",
+                    type == "Playlist" ? "Hip Hop" : "Rescue Me",
                     style: title2.copyWith(color: textPrimaryColor),
                   ),
                   const SizedBox(height: 4,),
                   Text(
-                    playlistString,
+                    type == "Playlist" ? playlistString : "One Republic",
                     style: subHeadline1.copyWith(color: textPrimaryColor),
                   ),
                   SizedBox(height: 0.032 * screenHeight,),
