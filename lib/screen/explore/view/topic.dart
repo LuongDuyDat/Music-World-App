@@ -73,7 +73,7 @@ class Topic extends StatelessWidget {
                           number: 1,
                         ),
                         onTap: () {
-                          Navigate.pushPage(context, SongPage());
+                          Navigate.pushPage(context, const SongPage());
                         },
                       ),
                       const SongListTile(
