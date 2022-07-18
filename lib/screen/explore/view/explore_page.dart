@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_world_app/screen/explore/view/topic.dart';
 import 'package:music_world_app/util/navigate.dart';
 
+import '../../../components/image_type.dart';
 import '../../../components/song_tile.dart';
 import '../../../util/colors.dart';
 import '../../../util/globals.dart';
@@ -99,22 +100,52 @@ class ExplorePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     InkWell(
-                      child: const ImageType(asset: "assets/images/hip_hop.png", type: "HipHop"),
+                      child: ImageType(
+                        asset: "assets/images/hip_hop.png",
+                        type: "HipHop",
+                        width: 0.256 * screenWidth,
+                        height: 0.075 * screenHeight,
+                      ),
                       onTap: () {
-                        Navigate.pushPage(context, Topic());
+                        Navigate.pushPage(context, const Topic());
                       },
                     ),
-                    const ImageType(asset: "assets/images/pop.png", type: "POP"),
-                    const ImageType(asset: "assets/images/jazz.png", type: "Jazz"),
+                    ImageType(
+                      asset: "assets/images/pop.png",
+                      type: "POP",
+                      width: 0.256 * screenWidth,
+                      height: 0.075 * screenHeight,
+                    ),
+                    ImageType(
+                      asset: "assets/images/jazz.png",
+                      type: "Jazz",
+                      width: 0.256 * screenWidth,
+                      height: 0.075 * screenHeight,
+                    ),
                   ],
                 ),
                 SizedBox(height: screenHeight * 0.0197,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    ImageType(asset: "assets/images/danc.png", type: "Danc"),
-                    ImageType(asset: "assets/images/ballad.png", type: "Ballad"),
-                    ImageType(asset: "assets/images/R_B.png", type: "R&B"),
+                  children: [
+                    ImageType(
+                      asset: "assets/images/danc.png",
+                      type: "Danc",
+                      width: 0.256 * screenWidth,
+                      height: 0.075 * screenHeight,
+                    ),
+                    ImageType(
+                      asset: "assets/images/ballad.png",
+                      type: "Ballad",
+                      width: 0.256 * screenWidth,
+                      height: 0.075 * screenHeight,
+                    ),
+                    ImageType(
+                      asset: "assets/images/R_B.png",
+                      type: "R&B",
+                      width: 0.256 * screenWidth,
+                      height: 0.075 * screenHeight,
+                    ),
                   ],
                 ),
               ],
@@ -124,29 +155,4 @@ class ExplorePage extends StatelessWidget {
       ],
     );
   }
-}
-
-class ImageType extends StatelessWidget {
-  final String asset;
-  final String type;
-  const ImageType({Key? key, required this.asset, required this.type}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image.asset(asset, width: 0.256 * screenWidth, height: 0.075 * screenHeight, fit: BoxFit.cover,),
-        Positioned.fill(
-          child: Align(
-            alignment: Alignment.center,
-            child: Text(
-              type,
-              style: labelMedium1.copyWith(color: textPrimaryColor),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
 }
