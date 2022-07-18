@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:music_world_app/screen/explore/view/topic.dart';
+import 'package:music_world_app/util/navigate.dart';
 
 import '../../../components/song_tile.dart';
 import '../../../util/colors.dart';
@@ -95,10 +97,15 @@ class ExplorePage extends StatelessWidget {
                 SizedBox(height: screenHeight * 0.0246,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    ImageType(asset: "assets/images/hip_hop.png", type: "HipHop"),
-                    ImageType(asset: "assets/images/pop.png", type: "POP"),
-                    ImageType(asset: "assets/images/jazz.png", type: "Jazz"),
+                  children: [
+                    InkWell(
+                      child: const ImageType(asset: "assets/images/hip_hop.png", type: "HipHop"),
+                      onTap: () {
+                        Navigate.pushPage(context, Topic());
+                      },
+                    ),
+                    const ImageType(asset: "assets/images/pop.png", type: "POP"),
+                    const ImageType(asset: "assets/images/jazz.png", type: "Jazz"),
                   ],
                 ),
                 SizedBox(height: screenHeight * 0.0197,),

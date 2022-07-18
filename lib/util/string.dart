@@ -42,3 +42,4 @@ String albumString = 'Album';
 String showMoreString = "Show more";
 String suggestionsString = "Suggestions";
 String lyricString = "Lyrics";
+String playlistString = "Playlist";

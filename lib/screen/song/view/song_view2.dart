@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:music_world_app/components/play_bar.dart';
 import 'package:music_world_app/util/colors.dart';
@@ -77,10 +79,20 @@ class _SongView1State extends State<SongView2> {
                 color: neutralColor1,
                 size: 20,
               ),
-              ImageIcon(
-                const AssetImage("assets/icons/download_icon.png"),
-                color: neutralColor1,
-                size: 20,
+              InkWell(
+                child: ImageIcon(
+                  const AssetImage("assets/icons/download_icon.png"),
+                  color: neutralColor1,
+                  size: 20,
+                ),
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return DownloadModal();
+                    },
+                  );
+                },
               ),
             ],
           ),
@@ -119,11 +131,31 @@ class _SongView1State extends State<SongView2> {
                 ],
               ),
               SizedBox(height: screenHeight * 0.0246,),
-              const PlayingBar(),
+              const PlayingBar(type: 0,),
             ],
           )
         ),
       ],
+    );
+  }
+
+}
+
+class DownloadModal extends StatelessWidget {
+  const DownloadModal({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 0.3756 * screenHeight,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            const Color.fromARGB(46, 5, 202, 252).withOpacity(0.2),
+            const Color.fromARGB(72, 14, 252, 160).withOpacity(0.2),
+          ],
+        ),
+      ),
     );
   }
 
