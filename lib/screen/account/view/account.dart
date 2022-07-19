@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:music_world_app/util/globals.dart';
 
 import '../../../components/button.dart';
+import '../../../components/show_more_tile.dart';
 import '../../../util/colors.dart';
 import '../../../util/string.dart';
 import '../../../util/text_style.dart';
@@ -99,13 +100,13 @@ class AccountPage extends StatelessWidget {
                   style: title5.copyWith(color: textPrimaryColor),
                 ),
                 SizedBox(height: 0.01 * screenHeight,),
-                LibraryOption(title: myPlaylistString, icon: "assets/icons/playlist_icon.png"),
+                ShowMoreListTile(title: myPlaylistString, icon: "assets/icons/playlist_icon.png", trailing: "navigate_next",),
                 Divider(color: neutralColor3, thickness: 1.5,),
-                LibraryOption(title: albumString, icon: "assets/icons/album_icon.png"),
+                ShowMoreListTile(title: albumString, icon: "assets/icons/album_icon.png", trailing: "navigate_next",),
                 Divider(color: neutralColor3, thickness: 1.5,),
-                LibraryOption(title: artistString, icon: "assets/icons/artist_icon.png"),
+                ShowMoreListTile(title: artistString, icon: "assets/icons/artist_icon.png", trailing: "navigate_next",),
                 Divider(color: neutralColor3, thickness: 1.5,),
-                LibraryOption(title: downloadString, icon: "assets/icons/download_icon.png"),
+                ShowMoreListTile(title: downloadString, icon: "assets/icons/download_icon.png", trailing: "navigate_next",),
                 SizedBox(height: 0.01 * screenHeight,),
                 Text(
                   recentActivityString,
@@ -163,35 +164,6 @@ class AccountPage extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-}
-
-class LibraryOption extends StatelessWidget {
-  final String title;
-  final String icon;
-  const LibraryOption({Key? key, required this.title, required this.icon}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      contentPadding: const EdgeInsets.all(0),
-      horizontalTitleGap: 3,
-      leading: ImageIcon(
-        AssetImage(icon),
-        color: const Color(0xFFEEEEEE),
-        size: 20,
-      ),
-      title: Text(
-        title,
-        style: bodyRegular1.copyWith(color: textPrimaryColor,),
-      ),
-      trailing: const Icon(
-        Icons.navigate_next,
-        size: 24,
-        color: Color(0xFFEEEEEE),
       ),
     );
   }
