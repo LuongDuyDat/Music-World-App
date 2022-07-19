@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:music_world_app/screen/account/view/edit_profile.dart';
 import 'package:music_world_app/util/globals.dart';
+import 'package:music_world_app/util/navigate.dart';
 
 import '../../../components/button.dart';
 import '../../../components/show_more_tile.dart';
@@ -25,7 +26,7 @@ class AccountPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Image.asset(
-                      "assets/images/Album1.png",
+                      "assets/images/avatar.png",
                       width: 0.2133 * screenWidth,
                       height: 0.2133 * screenWidth,
                       fit: BoxFit.cover,
@@ -83,10 +84,13 @@ class AccountPage extends StatelessWidget {
                             width: 0.208 * screenWidth,
                             height: screenHeight * 0.0345,
                             child: Button(
-                              text: followString,
+                              text: editString,
                               radius: 0,
                               minimumSize: screenHeight * 0.0345,
-                              type: bodyRegular3,
+                              type: bodyRoboto2,
+                              onPressed: () {
+                                Navigate.pushPage(context, const EditProfile());
+                              },
                             ),
                           ),
                         ],

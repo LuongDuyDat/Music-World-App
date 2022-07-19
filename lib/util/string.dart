@@ -55,3 +55,8 @@ String notificationString = lang == 'en' ? 'Notification' : 'Thông báo';
 String displayLanguageString = lang == 'en' ? 'Display Language' : 'Ngôn ngữ';
 String versionString = lang == 'en' ? 'Version' : 'Phiên bản';
 String signOutString = lang == 'en' ? 'SIGN OUT' : 'ĐĂNG XUẤT';
+String editString = lang == 'en' ? 'Edit' : 'Chỉnh sửa';
+String userNameString = lang == 'en' ? 'Username' : 'Tên';
+String genderString = lang == 'en' ? 'Gender' : 'Giới tính';
+String dateBirthString = lang == 'en' ? 'Date of birth' : 'Ngày sinh';
+String changePasswordString = lang == 'en' ? 'Change Password' : 'Đổi mật khẩu';
