@@ -50,3 +50,8 @@ String libraryString = lang== 'en' ? 'Library' : 'Thư viện';
 String myPlaylistString = lang == 'en' ? "My playlist" : "Playlist của tôi";
 String downloadString = lang == 'en' ? "Download" : "Tải về";
 String recentActivityString = lang == 'en' ? 'Recent Activity' : 'Hoạt động gần đây';
+String settingString = lang == 'en' ? 'Setting' : 'Cài đặt';
+String notificationString = lang == 'en' ? 'Notification' : 'Thông báo';
+String displayLanguageString = lang == 'en' ? 'Display Language' : 'Ngôn ngữ';
+String versionString = lang == 'en' ? 'Version' : 'Phiên bản';
+String signOutString = lang == 'en' ? 'SIGN OUT' : 'ĐĂNG XUẤT';
